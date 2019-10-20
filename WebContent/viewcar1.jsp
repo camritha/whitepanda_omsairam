@@ -157,6 +157,7 @@ BasicDBObject getQuery = new BasicDBObject();
 getQuery.put("brand", model);
 DBCursor cursor = collection.find(getQuery);
 int k=0;
+//depending on the model documents are being retrieved and displayed
 while(cursor.hasNext())
 {
 	k=0;
