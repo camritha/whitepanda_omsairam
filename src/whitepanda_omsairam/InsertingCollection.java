@@ -1,3 +1,5 @@
+//not main one simply used to create a collection! not used in web service
+
 package whitepanda_omsairam;
 
 import com.mongodb.client.MongoCollection; 
