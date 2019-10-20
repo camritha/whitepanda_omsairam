@@ -31,7 +31,7 @@ public class InsertingCollection {
       .append("id", carid)
       .append("description", "Maruti suzuki swift dezire") 
       .append("seatingcapacity", 5);
-      collection.insertOne(document); 
+      collection.insertOne(document); //inserting the user entered information about car as a dcument in collection
       System.out.println("Document inserted successfully");     
    } 
 }
