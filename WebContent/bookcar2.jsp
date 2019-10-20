@@ -145,6 +145,7 @@ tr:nth-child(even) {
     <th>Rent per day</th>
   </tr>
 <% 
+//All the car details in the database is being retrieved and the dates are being saved as session for further use
 String tripstart = request.getParameter("tripstart");
 session.setAttribute("tripstart", tripstart);
 String tripend = request.getParameter("tripend");
@@ -157,6 +158,7 @@ DB db = mongo.getDB("whitepanda");
 DBCollection collection = db.getCollection("cars");
 BasicDBObject getQuery = new BasicDBObject();
 getQuery.put("seatingcapacity", new BasicDBObject("$gt", (seat-1)));
+//only if seating capacity matches they are retrieved
 DBCursor cursor = collection.find(getQuery);
 int k=0;
 while(cursor.hasNext())
@@ -172,7 +174,7 @@ while(cursor.hasNext())
     BasicDBObject ngetQuery = new BasicDBObject();
     ngetQuery.put("carid", carid);
     DBCursor ncursor = ncollection.find(ngetQuery);
-    
+    /Checking if the cars are already in the booking table
     while(ncursor.hasNext())
     {
     	DBObject obj1=ncursor.next();
@@ -183,7 +185,7 @@ while(cursor.hasNext())
         Date ssdate = null;
         Date eedate=null;
         Date or=null;
-        
+       
         try {
 		 ssdate = curFormater.parse(sdate);
 	       eedate = curFormater.parse(edate);
@@ -194,7 +196,7 @@ while(cursor.hasNext())
 	        // TODO Auto-generated catch block
 	        e.printStackTrace();
 	    } 
-    	
+    	 //if the dates of the current booking falls anywhere in between already booked dates then the car is not shown else it is displayed
     	if(or.after(ssdate) && or.before(eedate))
     	{
     		System.out.println(or);
@@ -223,6 +225,7 @@ while(cursor.hasNext())
  %>
  </table>
 <form action="bookcar3.jsp" method="post">
+	<!-- the car id of the car user would like to book and the customer details is being retrieved after that information is being send to bookcar3.jsp -->
 <div>
 <label> Enter car id from above table which you wish to book:</label><br>
 		<input type="text" name="cid"></div>
