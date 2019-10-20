@@ -171,7 +171,7 @@ collection.insertOne(document);
 System.out.println("Document inserted successfully");  
 
  %>
- <div><h1>Booking Suucessfull </h2></div>
+ <div><h1>Booking Successful </h2></div>
 
 <br>
 </div>
