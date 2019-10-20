@@ -118,6 +118,7 @@
 <div class="main">
 	<div class="fieldset" align="center">
 <h3>Delete car</h3><br>
+		<!-- admin is requested to enter the car id to detlete the booking -->
 <form action="deletecar1.jsp" method="post">
 		<div>
 		<label> Enter car id </label><br>
