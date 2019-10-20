@@ -33,9 +33,13 @@ public class addcarserv extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
+	//through get method the data entered in the form is passed on to this method for insertion
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//The data about car details from user 
 		 int carid=Integer.parseInt(request.getParameter("id"));
 		 String name=request.getParameter("name");
 		 String desc=request.getParameter("desc");
@@ -64,6 +68,7 @@ public class addcarserv extends HttpServlet {
 	      .append("description", desc) 
 	      .append("rentperday", rpd);
 	      collection.insertOne(document); 
+		//inserting document int he collection with information retrieved
 	      System.out.println("Document inserted successfully");  
 	      response.sendRedirect("addcarsuccess.html");
 	        
