@@ -120,6 +120,7 @@
 <h3>VIEW CAR</h3><br>
 <form action="viewcar1.jsp" method="post">
 		<div>
+			<!-- user enters the model of the car they would like to book -->
 		<label> Enter model </label><br>
 		<input type="text" name="model"></div><br>
 		<br><input type="submit" value="SEARCH" class="button" ><br><br>
