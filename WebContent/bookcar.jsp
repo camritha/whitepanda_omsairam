@@ -118,6 +118,7 @@
 <div class="main">
 	<div class="fieldset" align="center">
 <h3>Book car</h3><br>
+		<!-- user enters the dates and seating capacity on which day they would like to book the car -->
 <form action="bookcar2.jsp" method="post">
 		<div>
 			<div style="fontsize:10px;">You can only book from morning 6am to next day morning 5am No changes</div><br>
