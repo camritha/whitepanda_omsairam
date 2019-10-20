@@ -137,7 +137,7 @@ tr:nth-child(even) {
 
 
 <% 
-
+//The details are being retrieved from the form along with dates from the session
 int cid=Integer.parseInt(request.getParameter("cid"));
 HttpSession asession = request.getSession();
 String edate=(String) asession.getAttribute("tripend");
@@ -167,6 +167,7 @@ Document document = new Document("carid", cid)
 .append("startdate", sdate) 
 .append("enddate", edate);
 collection.insertOne(document); 
+//the document containing information is inserted in booking collection
 System.out.println("Document inserted successfully");  
 
  %>
