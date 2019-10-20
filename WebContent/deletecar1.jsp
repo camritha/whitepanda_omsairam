@@ -154,14 +154,14 @@ BasicDBObject ngetQuery = new BasicDBObject();
 ngetQuery.put("carid", cid);
 DBCursor ncursor = ncollection.find(ngetQuery);
 
-
+//retrieve the booking if booking is in the booking table. Admin is expected to delete booking after the date has been finished
 while(ncursor.hasNext())
 {
 	DBObject obj1=ncursor.next();
 	k=1;
    break;
 }
-
+//if car id is in booking table then you cant delete the car else you can
 if(k==1)
 {
 	response.sendRedirect("bookingunseccessful.html");
